@@ -1,0 +1,22 @@
+entity Category {
+	name String required
+}
+
+entity Movie {
+    title String required
+    duration Integer required
+    ageLimit Float required
+    description String required
+    actors String required
+    releaseDate ZonedDateTime required
+    image Blob required
+}
+
+relationship ManyToMany {
+	Category{movie} to Movie{category(name)} 
+}
+
+paginate Movie with pagination
+dto * with mapstruct
+service * with serviceImpl
+
